@@ -226,17 +226,113 @@ hover()
 mouseout()
         </code></pre>
     </section>
-      
+    
+    <section>
+      <h2>Chaining Event Handlers</h2>
+            <pre><code data-trim>
+// sample JavaScript
+$('#phone').focus(function() {
+    // Control has focus. Display help
+    $('#phone-help').text('Please enter your phone number as all digits');
+}).blur(function() {
+    // Control lost focus. Clear help
+    $('#phone-help').text('');
+});
+        </code></pre>
+    </section>
+    
+    
+    <section>
+      <h2>Changing style with css</h2>
+            <pre><code data-trim>
+// Retrieve an item's color
+var color = $('#target').css('color');
+// Change an item's color to red
+$('#target').css('color', 'red');              
 
-        
+var style = {
+	color: 'red',
+	backgroundColor: yellow
+};
+
+$('#target').css(style);
+        </code></pre>
+    </section>
+    
+    <section>
+      <h2>Append and prepend</h2>
+            <pre><code data-trim>
+// prepend is called on the target, and accepts the new content as the parameter
+$('#target').prepend('<div>New content</div>');
+
+// append is called on the target, and accepts the new content as the parameter
+$('#target').append('<div>New content</div>');
+        </code></pre>
+    </section>
+    
+    <section>
+      <h2>Before and After</h2>
+            <pre><code data-trim>
+// prepend is called on the target, and accepts the new content as the parameter
+$('#target').before('<div>New content</div>');
+
+// append is called on the target, and accepts the new content as the parameter
+$('#target').after('<div>New content</div>');
+        </code></pre>
+    </section>
+    
+    <section>
+      <h2>Revisit text() and html()</h2>
+        <pre><code data-trim>
+$('#output').text('value');
+$('#output').html('value');
+        </code></pre>
+    </section>
+    
+    
+    <section>
+      <h2>wrap() and wrapAll()</h2>
+        <pre><code data-trim>
+          
+// The wrap function wraps each item with the element passed into the function
+$('.demo').wrap('<section></section>');
+
+// WrapAll wraps all returned content with one new element
+$('.demo').wrapAll('<section></section>');
+
+        </code></pre>
+    </section>
+    
+    <section>
+      <h2>Animations</h2>
+        <pre><code data-trim>
+
+$('.demo').hide();
+$('.demo').show();
+$('.demo').toggle();
+
+        </code></pre>
+    </section>
+
+    <section>
+      <h2>Animations</h2>
+        <pre><code data-trim>
+
+$('.demo').fadeIn();
+$('.demo').fadeOut();
+$('.demo').fadeToggle();
+
+        </code></pre>
+    </section>    
+
         <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-          <h2>Exercise: Ratings Meter</h2>
+          <h2>Exercises</h2>
           <ol>
-            <li>The user hovers over a circle. That circle, and all the ones to its left, must be highlighted.</li>
-            <li>To implement this, we must first discover what circle the user has moved their mouse over.</li>
-            <li>Then, we need to select that circle, and the ones to the left of it in the collection of circles.</li>
-            <li>We must highlight those circles. This can be done by adding a class to those circles. The class provided is <code>rating-chosen</code>.</li>
-            <li>We must ensure the circles to the right aren't highlighted. You could do this by removing the <code>rating-chosen</code> class.</li>
+            <li>When double clicked on "My Personal Page", make it dissapear Use <code>dblclick</code> to do this.</li>
+            <li>Chain mouseenter and mouseleave on the first list item of "Hobbies" so that the color and font changes .</li>
+            <li>Include a button, "Dissapear/Appear Page" that when clicked fades out the entire webpage and brings back the content when clicked.</li>
+            <li>Create a button which creates many other buttons.</li>
+            <li>Modify the previous exercise such that each replicated button has the button and the button number. Eg:- "Button 1, 2, 3, etc".</li>
           </ol>
         </section>
         
